@@ -2,7 +2,7 @@ from normal_line import NormalLine
 from prioritary_line import PrioritaryLine
 
 
-class main:
+class Main:
     def __init__(self):
         self.line = NormalLine()
         self.priority_line = PrioritaryLine()

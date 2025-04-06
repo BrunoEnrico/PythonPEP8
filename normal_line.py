@@ -1,4 +1,4 @@
-class NormalLine:
+class normalline:
     code: int = 0
     line: list = []
     clients_attended: list = []
