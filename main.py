@@ -19,7 +19,7 @@ class Main:
         self.priority_line.update_line()
         self.priority_line.call_client(1)
         self.priority_line.call_client(2)
-        print(self.priority_line.statistics("05", 41, "detail"))
+        print(self.priority_line.statistics("05", "41", "detail"))
 
 
 if __name__ == '__main__':

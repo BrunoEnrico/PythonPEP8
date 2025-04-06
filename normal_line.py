@@ -1,4 +1,4 @@
-class normalline:
+class NormalLine:
     code: int = 0
     line: list = []
     clients_attended: list = []
@@ -6,7 +6,6 @@ class normalline:
 
     def generate_current_password(self) -> None:
         self.current_password = f"NM{self.code}"
-
 
     def increment_line(self) -> None:
         if self.code > 100:
