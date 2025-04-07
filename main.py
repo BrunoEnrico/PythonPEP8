@@ -1,11 +1,11 @@
 from normal_line import NormalLine
-from prioritary_line import PrioritaryLine
+from prioritary_line import PriorityLine
 
 
 class Main:
     def __init__(self):
         self.line = NormalLine()
-        self.priority_line = PrioritaryLine()
+        self.priority_line = PriorityLine()
 
     def process(self):
         # self.line.update_line()
