@@ -36,9 +36,9 @@ class Line(metaclass=abc.ABCMeta):
 
         statistics: dict[str, Union[str, int, list[Any]]] = {}
         if flag != "detail":
-            statistics = {
-                f"{str(agency)} -- {day}": len(self.clients_attended)
-            }
+            statistics[
+                f"{agency} -- {day}"
+            ] = len(self.clients_attended)
         else:
             statistics["day"] = day
             statistics["agency"] = agency

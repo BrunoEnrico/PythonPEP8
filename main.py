@@ -1,25 +1,12 @@
-from normal_line import NormalLine
-from prioritary_line import PriorityLine
+from line_factory import LineFactory
 
 
 class Main:
-    def __init__(self) -> None:
-        self.line = NormalLine()
-        self.priority_line = PriorityLine()
 
-    def process(self) -> None:
-        # self.line.update_line()
-        # self.line.update_line()
-        # self.line.update_line()
-        # self.line.update_line()
-        # print(self.line.call_client("12"))
-        self.priority_line.update_line()
-        self.priority_line.update_line()
-        self.priority_line.update_line()
-        self.priority_line.update_line()
-        self.priority_line.call_client(1)
-        self.priority_line.call_client(2)
-        print(self.priority_line.statistics("06", 41, "detail"))
+    @staticmethod
+    def process() -> None:
+        line = LineFactory.get_line_factory("normal")
+        print(line)
 
 
 if __name__ == '__main__':
