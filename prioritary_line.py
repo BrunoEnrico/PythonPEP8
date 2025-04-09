@@ -1,12 +1,8 @@
 from line import Line
+from constants import PRIORITARY_CODE
 
 
 class PriorityLine(Line):
 
     def generate_current_password(self) -> None:
-        self.current_password = f"PR{self.code}"
-
-    def update_line(self) -> None:
-        self.increment_line()
-        self.generate_current_password()
-        self.line.append(self.current_password)
+        self.current_password = f"${PRIORITARY_CODE}{self.code}"

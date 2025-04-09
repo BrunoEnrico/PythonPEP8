@@ -3,11 +3,11 @@ from prioritary_line import PriorityLine
 
 
 class Main:
-    def __init__(self):
+    def __init__(self) -> None:
         self.line = NormalLine()
         self.priority_line = PriorityLine()
 
-    def process(self):
+    def process(self) -> None:
         # self.line.update_line()
         # self.line.update_line()
         # self.line.update_line()
@@ -19,7 +19,7 @@ class Main:
         self.priority_line.update_line()
         self.priority_line.call_client(1)
         self.priority_line.call_client(2)
-        print(self.priority_line.statistics("05", "41", "detail"))
+        print(self.priority_line.statistics("06", 41, "detail"))
 
 
 if __name__ == '__main__':

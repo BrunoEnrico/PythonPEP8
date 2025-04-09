@@ -1,12 +1,8 @@
 from line import Line
+from constants import NORMAL_CODE
 
 
 class NormalLine(Line):
 
     def generate_current_password(self) -> None:
-        self.current_password = f"NM{self.code}"
-
-    def update_line(self) -> None:
-        self.increment_line()
-        self.generate_current_password()
-        self.line.append(self.current_password)
+        self.current_password = f"${NORMAL_CODE}{self.code}"
