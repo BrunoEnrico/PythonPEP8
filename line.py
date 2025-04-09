@@ -1,7 +1,15 @@
 import abc
-from typing import Any, Union
+from typing import Protocol, Any, Union, runtime_checkable
 
 from constants import MAX_LINE, MIN_LINE
+
+
+@runtime_checkable
+class ReturnStatisticsProtocol(Protocol):
+    def get_statistics(self,
+                       clients_attended: list[Any]) -> (
+            dict[str, Union[str, int, list[Any]]]
+    ): ...
 
 
 class Line(metaclass=abc.ABCMeta):
@@ -30,19 +38,8 @@ class Line(metaclass=abc.ABCMeta):
         self.clients_attended.append(current_client)
         return f"{current_client} on {desk_number}"
 
-    def statistics(self, day: str, agency: int, flag: str) -> (
+    def statistics(self, return_statistics: ReturnStatisticsProtocol) -> (
             dict[str, Union[str, int, list[Any]]]
     ):
 
-        statistics: dict[str, Union[str, int, list[Any]]] = {}
-        if flag != "detail":
-            statistics[
-                f"{agency} -- {day}"
-            ] = len(self.clients_attended)
-        else:
-            statistics["day"] = day
-            statistics["agency"] = agency
-            statistics["clients_attended"] = self.clients_attended
-            statistics["amount_clients_attended"] = len(self.clients_attended)
-
-        return statistics
+        return return_statistics.get_statistics(self.clients_attended)
